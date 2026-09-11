@@ -1,0 +1,36 @@
+# Model weights — not distributed, see docker/README.md
+*.pth
+*.pt
+*.ckpt
+docker/weights/
+
+# Challenge data (CC BY, obtain from the organizers), training outputs, containers
+data/
+runs/
+logs/
+submission/
+docker/test_input*/
+docker/test_output*/
+out_gate/
+*.zip
+*.tar
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local credentials — never commit
+.env
+*.token
+
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+.idea/

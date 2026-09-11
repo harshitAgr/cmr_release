@@ -1,0 +1,57 @@
+CMR-Multi 2026 challenge entry
+Copyright 2026 Harshit Agrawal / AIATELLA Oy.
+
+This product includes software developed by the above.
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+================================================================================
+SCOPE OF THE APACHE-2.0 GRANT
+================================================================================
+
+Every source file in this repository was authored by us, so the Apache-2.0
+licence in LICENSE covers all of it. No third-party source file is vendored
+here: the pipeline is built entirely on nnU-Net v2 as an installed dependency,
+and nothing in this repository imports the organizers' baseline.
+
+The organizer baseline is therefore NOT redistributed:
+
+    https://github.com/qutaiping/CMR_multi_baseline
+    commit cfc38fe0bd9c3d9b17100f9fee51b6520361979e
+
+It is referenced only because its reference LVEF routine (3D_seg/
+calculate_lv_ef.py, read_id_slice_sax) establishes that the cine-SAX
+phase-count metadata file this pipeline looks for is part of the released data
+contract. Upstream publishes no LICENSE file; obtain terms from its authors.
+
+================================================================================
+UPSTREAM MODELS AND DATA
+================================================================================
+
+No model weights and no challenge data are distributed in this repository.
+
+- CMR-MULTI 2026 challenge data, released by the organizers under CC BY
+  (Attribution) at https://huggingface.co/datasets/TaipingQu/CMR-MULTI. Pinned
+  to commit cfdbfec4b18b245bd96b631b5b330236ae2f238e; see TRAINING.md.
+  Not redistributed. CC BY attaches an attribution requirement, not a
+  non-commercial one, so checkpoints trained on it carry no non-commercial
+  restriction from the data — attribute the organizers if you distribute them.
+
+- No pretrained model weights are used. Every network in the submitted system
+  is trained from random initialization by nnU-Net v2; the container downloads
+  nothing at runtime and runs fully offline.
+
+- Built on nnU-Net v2 (Apache-2.0), PyTorch (BSD-3-Clause), NumPy / SciPy /
+  pandas (BSD-3-Clause), nibabel (MIT), SimpleITK (Apache-2.0), scikit-image
+  (BSD-3-Clause), batchgenerators (Apache-2.0), dynamic-network-architectures
+  (Apache-2.0), einops (MIT). Exact pins are in docker/requirements.txt.
+
+================================================================================
+CITATION
+================================================================================
+
+If you use this code, please cite the challenge paper (see README.md) and
+nnU-Net:
+
+  Isensee, F., Jaeger, P.F., Kohl, S.A.A., Petersen, J., Maier-Hein, K.H.
+  nnU-Net: a self-configuring method for deep learning-based biomedical image
+  segmentation. Nature Methods 18, 203-211 (2021).

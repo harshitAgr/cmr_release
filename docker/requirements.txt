@@ -1,0 +1,15 @@
+# Pinned versions of the training and inference environment, so container inference
+# reproduces local numbers exactly.
+# torch/torchvision are installed separately in the Dockerfile from the cu130 wheel index
+# (needed for the RTX PRO 6000 Blackwell / compute-capability 12.0 GPU + CUDA 13 driver).
+nnunetv2==2.8.0
+numpy==2.4.6
+scipy==1.17.1
+nibabel==5.4.2
+simpleitk==2.5.5
+scikit-image==0.26.0
+batchgenerators==0.25.3
+batchgeneratorsv2==0.3.3
+acvl_utils==0.2.6
+dynamic_network_architectures==0.4.4
+einops==0.8.2
